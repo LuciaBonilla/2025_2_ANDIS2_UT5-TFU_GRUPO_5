@@ -24,6 +24,23 @@ GRUPO 5:
 - El testing de la aplicación se realiza con Postman.
 - Vease el informe de la TFU 5 en Webasignatura para más información.
 
+### Endpoint SOAP formato de la request
+
+El endpoint es POST http://localhost:8080/soap-user
+
+```xml
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:user="http://example.com/user">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <user:CreateUserRequest>
+         <username>...</username>
+         <email>...</email>
+      </user:CreateUserRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
+```
+
 ### Requisitos
 
 * [maven](https://maven.apache.org/install.html)
