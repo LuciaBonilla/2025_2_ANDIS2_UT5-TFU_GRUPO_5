@@ -1,0 +1,320 @@
+{
+	"info": {
+		"_postman_id": "02648e6d-2a2e-47f7-9e9a-1605531b3569",
+		"name": "UT5 TFU",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32815895"
+	},
+	"item": [
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"test\",\r\n    \"email\": \"test@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_user}}/users",
+					"host": [
+						"{{base_url_user}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_user}}/users",
+					"host": [
+						"{{base_url_user}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_user}}/users/:id",
+					"host": [
+						"{{base_url_user}}"
+					],
+					"path": [
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create project",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Soluciones de arquitectura\",\r\n    \"description\": \"Aprendiendo sobre soluciones de arquitectura\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_work}}/projects",
+					"host": [
+						"{{base_url_work}}"
+					],
+					"path": [
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all projects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_work}}/projects",
+					"host": [
+						"{{base_url_work}}"
+					],
+					"path": [
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get project by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_work}}/projects/:id",
+					"host": [
+						"{{base_url_work}}"
+					],
+					"path": [
+						"projects",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get project tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_work}}/projects/:id/tasks",
+					"host": [
+						"{{base_url_work}}"
+					],
+					"path": [
+						"projects",
+						":id",
+						"tasks"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Terminar TaskDTO.java\",\r\n    \"status\": \"PENDIENTE\",\r\n    \"projectId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_work}}/tasks",
+					"host": [
+						"{{base_url_work}}"
+					],
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get task by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_work}}/tasks/:id",
+					"host": [
+						"{{base_url_work}}"
+					],
+					"path": [
+						"tasks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "assign task to user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url_work}}/tasks/:taskId/users/:userId",
+					"host": [
+						"{{base_url_work}}"
+					],
+					"path": [
+						"tasks",
+						":taskId",
+						"users",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "taskId",
+							"value": "1"
+						},
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SOAP create user",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n                  xmlns:user=\"http://example.com/user\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <user:CreateUserRequest>\r\n         <username>alice</username>\r\n         <email>alice@example.com</email>\r\n      </user:CreateUserRequest>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>\r\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/soap-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"soap-user"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url_user",
+			"value": ""
+		},
+		{
+			"key": "base_url_work",
+			"value": ""
+		}
+	]
+}
